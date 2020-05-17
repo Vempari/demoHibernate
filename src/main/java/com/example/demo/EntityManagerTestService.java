@@ -8,8 +8,5 @@ import javax.persistence.PersistenceContext;
 @Component
 public class EntityManagerTestService {
 
-	@PersistenceContext
-	private EntityManager entityManager;
-
 
 }

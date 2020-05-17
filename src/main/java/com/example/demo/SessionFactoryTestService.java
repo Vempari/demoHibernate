@@ -7,8 +7,4 @@ import org.springframework.stereotype.Component;
 @Component
 public class SessionFactoryTestService {
 
-	@Autowired
-	private SessionFactory sessionFactory;
-
-
 }

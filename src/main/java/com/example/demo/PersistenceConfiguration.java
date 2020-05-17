@@ -50,6 +50,10 @@ public class PersistenceConfiguration {
 		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		hibernateProperties.setProperty("hibernate.format_sql", "true");
+		hibernateProperties.setProperty("hibernate.cache.use_query_cache", "true");
+		hibernateProperties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");
+		hibernateProperties.setProperty("hibernate.cache.provider_class", "net.sf.ehcache.hibernate.EhCacheProvider");
+		hibernateProperties.setProperty("hibernate.cache.use_second_level_cache", "true");
 
 		return hibernateProperties;
 	}
