@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,8 +20,11 @@ public class Client {
 	private String name;
 	private int age;
 
-	@OneToMany(mappedBy = "client"/*, orphanRemoval = true*/)
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
 	private List<Account> accounts = new ArrayList<>();
+
+	@OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+	private List<City> cities = new ArrayList<>();
 
 	@Override
 	public String toString() {

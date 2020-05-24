@@ -7,4 +7,8 @@
 	<Account id_account="200" amount="100" currency="USD" id_client="10"/>
 	<Account id_account="300" amount="150" currency="EUR" id_client="11"/>
 	<Account id_account="400" amount="200" currency="EUR" id_client="12"/>
+
+	<Address id_address="80" address="St.Georgian 31" id_account="100"/>
+
+	<City id_city="81" city="Moscow" id_client="10"/>
 </dataset>

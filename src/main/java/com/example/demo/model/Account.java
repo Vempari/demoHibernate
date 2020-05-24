@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,9 +19,12 @@ public class Account {
 	private int amount;
 	private String currency;
 
-	@ManyToOne(optional=false)
+	@ManyToOne()
 	@JoinColumn(name = "id_client")
 	private Client client;
+
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+	private List<Address> addresses = new ArrayList<>();
 
 	@Override
 	public String toString() {
